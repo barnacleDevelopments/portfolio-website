@@ -7,14 +7,14 @@ File: index.js
 document.querySelectorAll(".open-btn").forEach(el => {
     el.addEventListener("click", (e) => {
         e.preventDefault();
-        document.querySelector(".main-nav").classList.add("top-nav");
+        document.querySelector(".main-nav").classList.add("back-nav");
         document.querySelector(".air-lock").classList.add("lock-top");
         document.querySelector(".back-btn").classList.add("back-btn-visible");
     });
 });
 
 document.querySelector(".back-btn").addEventListener("click", () => {
-    document.querySelector(".main-nav").classList.remove("top-nav");
+    document.querySelector(".main-nav").classList.remove("back-nav");
     document.querySelector(".air-lock").classList.remove("lock-top");
     document.querySelector(".back-btn").classList.remove("back-btn-visible");
     document.querySelector(".about-me").style.display = "none"
