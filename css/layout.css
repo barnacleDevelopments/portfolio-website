@@ -6,16 +6,15 @@ File: index.html
 
 /* Univeral Layout styles*/
 .page-section {
-    position: absolute;
-    top: 0px;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    width: 100%;
-    
+    justify-items: center;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    padding: 14px;
+    padding-bottom: 74px;
+    column-gap: 14px;
+    row-gap: 14px;
 }
 
 .page-section h1 {
@@ -25,27 +24,20 @@ File: index.html
 }
 
 .text-area {
-    margin-top: 14px;
-    margin-bottom: 14px;
-    width: 85%;
     background-color: #9e5a63;
     color: white;
     padding: 14px;
     box-sizing: border-box;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+    height: 100%;
 }
-
 
 /* intro section */
-#window {
-    width: 100%;
-}
-
 .air-lock {
     width: 100%;
     height: 100%;
     position: absolute;
     color: rgb(0, 0, 0);
-    position: relative;
     transform: translateY(0vh);
     transition: transform .5s ease-in-out;
     z-index: 9999;
@@ -54,6 +46,109 @@ File: index.html
 .lock-top {
     transform: translateY(-100vh);
 }
+
+.piano {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    padding: 0px 14px 14px 14px;
+    position: relative;
+    transform: translatey(-50vh);
+    transition: transform 1s ease-in-out;
+}
+
+.open-piano {
+    transform: translatey(0vh);
+}
+
+.key-set {
+    position: relative;
+    flex-basis: 100px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.key-set .key {
+    background-color: white;
+    flex-basis: 100px;
+    flex-grow: 2;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.key-set .chopstick {
+    background-color: black;
+    flex-basis: 100px;
+    flex-grow: 1;
+    position: absolute;
+    z-index: 10000;
+    width: 35%;
+    height: 80%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.key-connect-set {
+    position: relative;
+    flex-basis: 100px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.key-connect-set, .key-set {
+    display: none;
+}
+
+.key, .chopstick, .connect-chopstick {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.key-connect-set .key {
+    background-color: white;
+    flex-basis: 100px;
+    flex-grow: 2;
+}
+
+.key-connect-set .chopstick {
+    background-color: black;
+    flex-basis: 100px;
+    flex-grow: 1;
+    position: absolute;
+    z-index: 10000;
+    width: 35%;
+    height: 80%;
+}
+
+.key-connect-set .connect-chopstick:nth-of-type(1) {
+    background-color: black;
+    flex-basis: 100px;
+    flex-grow:1;
+    left: -17%;
+    position: absolute;
+    z-index: 10000;
+    width: 35%;
+    height: 80%;
+  
+}
+
+.key-connect-set .connect-chopstick:last-of-type{
+    background-color: black;
+    flex-basis: 100px;
+    flex-grow: 1;
+    right: -17%;
+    position: absolute;
+    z-index: 10000;
+    width: 35%;
+    height: 80%;
+}
+
 
 #intro {
     display: grid;
@@ -67,7 +162,7 @@ File: index.html
     align-items: center;
     flex-direction: column;
     background-color: #9e5a63;
-    padding: 40px
+    padding: 40px 40px 74px 40px
 }
 
 #intro-text h1 {
@@ -76,24 +171,10 @@ File: index.html
     color: #f5f5f5;
 }
 
-#window-cell {
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#window {
-    border-radius: 100px;
-    width: 180px;
-    height: 180px;
-    box-shadow: 0px 0px 1px 9999px #9e5a63;;
-}
-
 /* Navigation */
 .main-nav {
     display: flex;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     width: 100%;
     justify-content: space-between;
@@ -103,7 +184,13 @@ File: index.html
     transition: backgroundColor 3s;
     z-index: 10000;
     background-color: #314455;
-   
+    overflow: hidden;
+}
+
+.main-nav img {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #314455
 }
 
 .back-nav {
@@ -172,61 +259,8 @@ File: index.html
     box-shadow: 4px 2px 30px black;
 }
 
-@keyframes floatUp {
-    0% {
-        bottom: -10px;
-    }
-
-
-    100% {
-        bottom: 90%;
-    }
-}
-
-#bubble-one {
-    width: 70px;
-    height: 70px;
-    border-radius: 200px;
-    animation: floatUp 2s;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-timing-function: ease-in-out;
-}
-
-#bubble-one:hover {
-    width: 1000px;
-    height: 1000px;
-}
-
-#bubble-two {
-    top: 500px;
-    left: 150px;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-}
-
-#bubble-three {
-    top: 300px;
-    left: 200px;
-    width: 120px;
-    height: 120px;
-    border-radius: 100px;
-}
-
-#bubble-four {
-    top: 250px;
-    left: 60px;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-}
-
-#bubble-five {
-    top: 100px;
-    left: 185px;
-    width: 140px;
-    height: 140px;
-    border-radius: 100px;
+.side-nav {
+    display: none;
 }
 
 /* About Section */
@@ -247,13 +281,15 @@ File: index.html
 /* Contact Section */
 .contact-me {
     justify-items: center;
+    height: 100%;
 }
 
 .contact-me form {
-    width: 85%;
-    margin-top: 14px;
-    box-sizing: border-box;
     font-size: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-me input {
@@ -262,52 +298,156 @@ File: index.html
     border: none;
     padding: 10px 20px;
     margin-bottom: 3px;
-    width: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+    flex-basis: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
-.contact-me input:nth-of-type(4) {
-    height: 100px
+.contact-me textarea {
+    flex-basis: 100px;
+    flex-grow: 3;
+    background-color: #314455c2;
+    border: none;
+    color: #f5f5f5;
+    font-size: 16px;
+    padding: 20px 15px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+}
+
+.contact-me button {
+    margin-top: 14px;
+    border: none;
+    padding: 20px 15px;
+    background-color: #97aabd;
+    color: #f5f5f5;
+    font-weight: bold;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
 }
 
 /* Work Section */
 
-.work {
-    margin-top: 4px;
-}
-
 .projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 4px;
-    row-gap: 4px;
+    display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    width: 85%;
+    gap: 14px;
 }
 
 .projects > div {
-    height: 100px;
     width: 100%;
     flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
     background-image: url(https://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-    border: 2px solid rgba(0, 0, 0, 0.253);
+    background-size: cover;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
 }
 
 .projects > div:nth-of-type(1) {
     background-image: url("../img/ip7.png");
 }
 
-
-@media screen and (min-width: 600px) {
-    .page-section {
-        grid-template-columns: 1fr 2fr;
+/* smartphone portrait */
+@media screen and (min-width: 420px) {
+    .work {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr;
     }
+}
 
+/* smartphone landscape */
+@media screen and (min-width: 767px) {
     .contact-me form {
-        width: 90%;
+        display: flex;
+        flex-direction: column;
+      
     }
+
+    .contact-me form > input {
+        flex-basis: 10px;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    .contact-me form > input:nth-of-type(4) {
+        flex-basis: 60px;
+        flex-grow: 2;
+        flex-shrink: 2;
+
+    }
+
+    .about-me div {
+        height: 100%;
+    }
+
+    .key-connect-set:nth-of-type(1),
+    .key-connect-set:nth-of-type(2),
+    .key-set:nth-of-type(1),
+     .key-set:nth-of-type(2),
+     .key-set:nth-of-type(3) {
+       display: flex;
+   }
+
+}
+
+/* tablets portrait */
+@media screen and (min-width: 1023px) {
+
+    .page-section {
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: 1fr;
+        align-items: start;
+    }
+
+    .main-nav {
+        display: none;
+    }
+    .side-nav {
+        display: block;
+        position: fixed;
+        height: 100%;
+        z-index: 10000;
+        width: 60px;
+        background-color: #314455;
+
+    }
+
+    .side-nav ul {
+        display: flex;
+        flex-direction: column;
+        height: 60%;
+        width: 100%;
+    }
+
+    .side-nav li {
+        width: 100%;
+    }
+
+    #piano {
+        margin-left: 60px;
+    }
+
+    .key-connect-set:nth-of-type(1),
+    .key-connect-set:nth-of-type(2),
+    .key-set:nth-of-type(1),
+     .key-set:nth-of-type(2),
+     .key-set:nth-of-type(3) {
+       display: flex;
+   }
+}
+
+/* tablets landscape */
+@media screen and (min-width: 1365px) {
+   
+}
+
+/* desktop pcs */
+@media screen and (min-width: 1366px) {
+
 }

@@ -4,13 +4,13 @@ Date: Novemeber 12th, 2020
 File: index.html 
 */
 html, body {
-    height: 100%;
+ height: 100%;
 }
+
 body {
     margin: 0px;
     background-color: #c96567;
     font-family: 'Roboto', sans-serif;
-   
 }
 
 p {

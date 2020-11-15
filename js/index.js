@@ -37,3 +37,12 @@ document.querySelector("#work-btn").addEventListener("click", () => {
     document.querySelector(".work").style.display = "grid"
 });
 
+
+// on window resize check if portrait
+window.addEventListener("resize", () => {
+    if(window.innerHeight < window.innerWidth) {
+        document.querySelector(".piano").classList.add("open-piano")
+    } else {
+        document.querySelector(".piano").classList.remove("open-piano")
+    }
+})

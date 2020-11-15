@@ -22,24 +22,58 @@
 <body>
     <section class="air-lock">
         <section id="intro">
-            <div id="window-cell">
-                <div id="window"></div>
+            <div class="piano">
+                <div class="key-set">
+                    <div class="key"></div>
+                    <div class="chopstick"></div>
+                    <div class="key"></div>
+                </div>
+                <div class="key-connect-set">
+                    <div class="connect-chopstick"></div>
+                    <div class="key"></div>
+                    <div class="chopstick"></div>
+                    <div class="key"></div>
+                    <div class="connect-chopstick"></div>
+                </div>
+                <div class="key-set">
+                    <div class="key"></div>
+                    <div class="chopstick"></div>
+                    <div class="key"></div>
+                </div>
+                <div class="key-connect-set">
+                    <div class="connect-chopstick"></div>
+                    <div class="key"></div>
+                    <div class="chopstick"></div>
+                    <div class="key"></div>
+                    <div class="connect-chopstick"></div>
+                </div>
+                <div class="key-set">
+                    <div class="key"></div>
+                    <div class="chopstick"></div>
+                    <div class="key"></div>
+                </div>
+                <div class="key-connect-set">
+                    <div class="connect-chopstick"></div>
+                    <div class="key"></div>
+                    <div class="chopstick"></div>
+                    <div class="key"></div>
+                    <div class="connect-chopstick"></div>
+                </div>
+                <div class="key-set">
+                    <div class="key"></div>
+                    <div class="chopstick"></div>
+                    <div class="key"></div>
+                </div>
+            
             </div>
             <div id="intro-text">
-                <h1>Dev the Developer</h1>
+                <h1>Hi, I'm Dev <br> the Developer.</h1>
                 <button class="open-btn contact-btn contact-btn-1"><span>contact</span><span>me</span></button>
             </div> 
         </section>   
     </section>
-    <nav class="main-nav">
-        <div class="back-btn"><i class="fas fa-arrow-left"></i></div>
-        <ul class="nav-list">
-            <li id="home-btn"><a href="" class="open-btn"><i class="fas fa-home fa-lg "></i></a></li>
-            <li class="contact-btn"><a href="" class="open-btn"><i class="fas fa-envelope fa-lg open-btn"></i></a></li>
-            <li id="about-btn"><a href="" class="open-btn"><i class="fas fa-user fa-lg open-btn"></i></a></li>
-            <li id="work-btn"><a href="" class="open-btn"><i class="fas fa-eye fa-lg open-btn"></i></a></li>
-        </ul>
-    </nav> 
+
+
     <section style="display: none;" class="page-section skill-bubbles">
         <h2>skills</h2>
             <div id="bubble-one"><i class="fab fa-node-js fa-lg"></i></div>
@@ -49,6 +83,7 @@
             <div id="bubble-five"></div>
             <div id="bubble-six"></div>
     </section>
+
     <section style="display: none;" class=" page-section about-me">
         <div>
             <img src="./img/self-portrait.jpg">
@@ -64,21 +99,23 @@
             ex ea commodo consequat.</p>
         </article>
     </section>
+
     <section style="display: none;" class="page-section contact-me">
-        <article class="text-area">
-            <h1>Contact Me</h1>
-            <p>I'm always seeking new opportuties to
-               create and learn awesome things and I'd love
-               to help you on your jouney! Contact me with the
-               form bellow and I will be with you shortly. </p>
-        </article>
-        <form>
-            <input type="text" placeholder="Name"></input>
-            <input type="text" placeholder="Email"></input>
-            <input type="text" placeholder="Title"></input>
-            <input type="text" placeholder="Description"></input>
-        </form>
+            <article class="text-area">
+                <h1>Contact Me</h1>
+                <p>I'm always seeking new opportuties to
+                create and learn awesome things and I'd love
+                to help you on your jouney! Contact me with the
+                form bellow and I will be with you shortly. </p>
+            </article>
+            <form id="fcf-form-id" class="fcf-form-class" name="myform" method="post" action="contact-form.php" >
+                <input type="text" name="Name" placeholder="Name"></input>
+                <input type="text" name="email" placeholder="Email"></input>
+                <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required placeholder="Description"></textarea>
+                <button type="submit">Send</button>
+            </form>
     </section>
+
     <section style="display: none;" class="page-section work">
         <article class="text-area">
             <h1>My Work</h1>
@@ -94,6 +131,26 @@
             <div></div>
         </div>
     </section>
+    <nav class="main-nav">
+        <div class="back-btn"><i class="fas fa-arrow-left"></i></div>
+        <ul class="nav-list">
+            <li id="home-btn"><img src="./img/logo_3.png"/></li>
+            <li class="contact-btn"><a href="" class="open-btn"><i class="fas fa-envelope fa-lg open-btn"></i></a></li>
+            <li id="about-btn"><a href="" class="open-btn"><i class="fas fa-user fa-lg open-btn"></i></a></li>
+            <li id="work-btn"><a href="" class="open-btn"><i class="fas fa-eye fa-lg open-btn"></i></a></li>
+        </ul>
+    </nav>
+     
+    <nav class="side-nav">
+        <div class="back-btn"><i class="fas fa-arrow-left"></i></div>
+        <ul class="nav-list">
+            <li id="home-btn"><img src="./img/logo_3.png"/></li>
+            <li class="contact-btn"><a href="" class="open-btn"><i class="fas fa-envelope fa-lg open-btn"></i></a></li>
+            <li id="about-btn"><a href="" class="open-btn"><i class="fas fa-user fa-lg open-btn"></i></a></li>
+            <li id="work-btn"><a href="" class="open-btn"><i class="fas fa-eye fa-lg open-btn"></i></a></li>
+        </ul>
+    </nav>
+
     <script src="./js/index.js"></script>
 </body>
 </html>
