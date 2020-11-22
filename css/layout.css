@@ -6,8 +6,6 @@ File: index.html
 
 /* Univeral Layout styles*/
 .page-section {
-    align-items: center;
-    justify-items: center;
     height: 100%;
     width: 90%;
     margin: auto;
@@ -20,7 +18,7 @@ File: index.html
 .page-section h1 {
     font-size: 40px;
     font-size: 40px;
-    margin: 20px 0px 9px 0px;
+    margin: 5px 0px 9px 0px;
 }
 
 .text-area {
@@ -33,7 +31,7 @@ File: index.html
 }
 
 /* intro section */
-.air-lock {
+.doors {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -43,12 +41,51 @@ File: index.html
     z-index: 9999;
 }
 
+#desktop-door {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 10000;
+    transition: transform 1s;
+}
+
+
+#intro {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 100%;
+    align-items: center;
+    background-color: #9e5a63;
+}
+
+#intro img {
+    position: absolute;
+    left: -500px;
+}
+
+#intro-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 40px 74px 40px;
+    height: 50%;
+}
+
+#intro-text h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #f5f5f5;
+}
+
 .lock-top {
     transform: translateY(-100vh);
 }
 
 .piano {
-    display: flex;
+    display: none;
     gap: 5px;
     width: 100%;
     padding: 0px 14px 14px 14px;
@@ -69,7 +106,6 @@ File: index.html
     justify-content: center;
     gap: 5px;
 }
-
 
 .key-set .key {
     background-color: white;
@@ -149,30 +185,8 @@ File: index.html
     height: 80%;
 }
 
-
-#intro {
-    display: grid;
-    grid-template-rows: 1fr 1.5fr;
-    height: 100%;
-}
-
-#intro-text {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    background-color: #9e5a63;
-    padding: 40px 40px 74px 40px
-}
-
-#intro-text h1 {
-    font-size: 50px;
-    margin-bottom: 30px;
-    color: #f5f5f5;
-}
-
 /* Navigation */
-.main-nav {
+nav.main-nav {
     display: flex;
     position: fixed;
     bottom: 0px;
@@ -187,27 +201,16 @@ File: index.html
     overflow: hidden;
 }
 
-.main-nav img {
+nav.main-nav img {
     width: 60px;
     height: 60px;
     border: 5px solid #314455
 }
 
-.back-nav {
-    background-color: #314455;
-    transition: backgroundColor 3s;
-}
 
-.nav-list {
+nav.main-nav ul {
     transition: transform 1s ease-in-out;
     transform: translateX(0%); 
-}
-
-.back-nav ul {
-    transform: translateX(100%); 
-}
-
-.nav-list {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -218,10 +221,9 @@ File: index.html
     column-gap: 2px;
     row-gap: 2px;
     height: 100%;
-
 }
 
-.nav-list > li {
+nav.main-nav ul > li {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,7 +232,7 @@ File: index.html
     color: white
 }
 
-.nav-list a {
+nav.main-nav ul a {
     height: 100%;
     width: 100%;
     display: flex;
@@ -239,6 +241,47 @@ File: index.html
     text-decoration: none;
     color: white;
 }
+
+nav.back-nav {
+    background-color: #314455;
+    transition: backgroundColor 3s;
+}
+
+nav.back-nav ul {
+    transform: translateX(100%); 
+}
+
+nav.side-nav {
+    display: none;
+    position: fixed;
+    height: 100%;
+    z-index: 10000;
+    width: 60px;
+    background-color: #314455;
+}
+
+nav.side-nav ul {
+    width: 100%;
+}
+
+nav.side-nav li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+nav.side-nav img {
+    width: 100%;
+    object-fit: contain;
+}
+
+nav.side-nav a {
+    text-decoration: none;
+    color: #f5f5f5
+}
+
 
 /* Skill section */
 .skill-bubbles {
@@ -259,9 +302,7 @@ File: index.html
     box-shadow: 4px 2px 30px black;
 }
 
-.side-nav {
-    display: none;
-}
+
 
 /* About Section */
 .about-me {
@@ -270,12 +311,16 @@ File: index.html
 }
 
 .about-me div {
-    width: 100%
+    width: 100%;
+    height: 100%;
+
 }
 
 .about-me div img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
 }
 
 /* Contact Section */
@@ -328,47 +373,105 @@ File: index.html
 }
 
 /* Work Section */
-
 .projects {
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
-    height: 100%;
-    gap: 14px;
+}
+
+.projects img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .projects > div {
     width: 100%;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 100px;
-    background-image: url(https://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif);
+    background-color: #f5f5f5;
+    margin-bottom: 14px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+    border-radius: 3px;
 }
 
-.projects > div:nth-of-type(1) {
-    background-image: url("../img/ip7.png");
+.prod div {
+    padding: 14px 20px;
+    background-color: #314455;
+    color: #f5f5f5
 }
-
 /* smartphone portrait */
+@media screen and (min-width: 375px) {
+ 
+
+}
+
+
 @media screen and (min-width: 420px) {
-    .work {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1.5fr;
-    }
+   
 }
 
 /* smartphone landscape */
+@media screen and (min-width: 667px) {
+    /* contact and about sections */
+    .about-me, .contact-me {
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: 1fr;
+        align-items: start;
+    }
+}
+
 @media screen and (min-width: 767px) {
+    .about-me, .contact-me {
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: 1fr;
+        align-items: start;
+    }
+    
+    /* piano */
+    .piano {
+        display: flex;
+    }
+
+    .key-connect-set:nth-of-type(1),
+    .key-connect-set:nth-of-type(2),
+    .key-set:nth-of-type(1),
+     .key-set:nth-of-type(2),
+     .key-set:nth-of-type(3) {
+       display: flex;
+   }
+
+    /* Work Section */
+    .work {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .work .text-area {
+        height: 400px;
+    }
+
     .contact-me form {
         display: flex;
         flex-direction: column;
-      
     }
 
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        gap: 14px;
+    }
+
+
+    .projects div {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 41%;     
+    }
+
+    /* contact setion */
     .contact-me form > input {
         flex-basis: 10px;
         flex-grow: 1;
@@ -382,6 +485,7 @@ File: index.html
 
     }
 
+    /* about section */
     .about-me div {
         height: 100%;
     }
@@ -398,56 +502,54 @@ File: index.html
 
 /* tablets portrait */
 @media screen and (min-width: 1023px) {
-
-    .page-section {
-        grid-template-columns: 1fr 1.5fr;
-        grid-template-rows: 1fr;
-        align-items: start;
-    }
-
-    .main-nav {
-        display: none;
-    }
-    .side-nav {
-        display: block;
-        position: fixed;
-        height: 100%;
-        z-index: 10000;
-        width: 60px;
-        background-color: #314455;
-
-    }
-
-    .side-nav ul {
-        display: flex;
-        flex-direction: column;
-        height: 60%;
-        width: 100%;
-    }
-
-    .side-nav li {
-        width: 100%;
-    }
-
-    #piano {
-        margin-left: 60px;
-    }
-
-    .key-connect-set:nth-of-type(1),
-    .key-connect-set:nth-of-type(2),
-    .key-set:nth-of-type(1),
-     .key-set:nth-of-type(2),
-     .key-set:nth-of-type(3) {
-       display: flex;
-   }
+ 
 }
 
 /* tablets landscape */
 @media screen and (min-width: 1365px) {
+    /* navigation */
+    nav.main-nav {
+        display: none;
+    }
+
+    nav.side-nav {
+        display: flex;
+    }
+
+    #desktop-door {
+        display: block;
+        width: 40%;
+        background-color: #9e5a63;
+    }
+
+    #intro {
+        width: 60%;
+    }
+
+    .work {
+        grid-template-columns: 1fr;
+        overflow: scroll;
+    }
+
+    .work .text-area {
+        display: none;
+    }
+
+    .page-section {
+        width: 40%;
+        margin: 0px;
+        float: right;
+    }
+
+
+    /* work section */
+    .projects > div {
+        flex-basis: 31%;     
+    }
    
 }
 
 /* desktop pcs */
 @media screen and (min-width: 1366px) {
-
+ 
 }
