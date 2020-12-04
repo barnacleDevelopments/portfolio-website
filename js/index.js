@@ -52,46 +52,80 @@ const _ = (selector) => {
 
 /*
 =====================================
+FUNCTIONS
+=====================================
+*/
+    const moveDoor = () => {
+        let door = $("#desktop-door")
+        if(door.hasClass("open-door")) {
+            door.removeClass("open-door")
+            door.addClass("close-door")
+        } 
+        setTimeout(() => {
+            door.addClass("open-door")
+            door.removeClass("close-door")
+        }, 500);
+    }
+/*
+=====================================
 MOBILE NAV EVENT HANDLERS
 =====================================
 */
 
 // When mobile nav item is pressed move the intro page cover off screen. 
-document.querySelectorAll(".open-btn").forEach(el => {
-    el.addEventListener("click", (e) => {
-        e.preventDefault();
-        _(".main-nav").class.add("back-nav");
-        _(".doors").class.add("lock-top");
-        _(".back-btn").class.add("back-btn-visible");
-    });
+$(".open-btn").on("click", (e) => {
+    e.preventDefault();
+    _(".main-nav").class.add("back-nav");
+    $("#intro").css("transform", "translateY(-100%)");
+    _(".back-btn").class.add("back-btn-visible");
+    $("#section-group").css("transform", "translateX(0%)")
 });
 
 // When mobile back btn is pressed move the intro page cover on screen. 
 _(".back-btn").listen("click", () => {
     _(".main-nav").class.remove("back-nav");
-    _(".doors").class.remove("lock-top");
+    $("#intro").css("transform", "translateY(0%)");
     _(".back-btn").class.remove("back-btn-visible");
     _(".about-me").attr("style", "display: none");
     _(".contact-me").hide()
     _(".work").hide()
 });
 
-// When mobile about btn is pressed display about page.
-_("#mobile-about-btn").listen("click", () => {
-    _(".about-me").attr("style", "display: grid")
+// When mobile contact btn is pressed display work page.
+_("#mobile-about-btn").listen("click", (e) => {
+    e.preventDefault()
+        $(".about-me").css("display", "grid")
+});
+
+      
+// When mobile contact btn is pressed display work page.
+_("#mobile-work-btn").listen("click", (e) => {
+    e.preventDefault()
+    _(".work").attr("style", "display: grid")
 });
 
 // When mobile contact btn is pressed display contact page.
-document.querySelectorAll(".mobile-contact-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        _(".contact-me").attr("style", "display: grid")
-    });
-});
+$(".contact-btn").on("click", () => {
+    let windowWidth = parseInt(window.innerWidth)
+    $("#main-heading").text("Lets get in touch...");
+    $(".contact-me").css("display", "grid")
+    $(".work").css("display", "none")
+    $(".about-me").css("display", "none")
+    if(windowWidth < 1365) {
+        $("#intro").css("transform", "translateY(-100%)");
+        $(".back-btn").addClass("back-btn-visible");
+    } else {
+        $("#section-group").css("transform", "translate(100%)")
+        $("#intro").css("width", "100%");
+        setTimeout(() => {
+            $("#intro").css("width", "60%");
+        $("#section-group").css("transform", "translate(0%)")
+        }, 500)
 
-// When mobile contact btn is pressed display work page.
-_("#mobile-work-btn").listen("click", () => {
-    _(".work").attr("style", "display: grid")
-});
+    }
+        moveDoor()
+        return false
+})
 
 /*
 =====================================
@@ -99,74 +133,59 @@ DESKTOP NAV EVENT HANDLERS
 =====================================
 */
 
-const moveDoor = () => {
-    let door = _("#desktop-door")
-    if(door.class.list().contains("open-door")) {
-        door.class.remove("open-door")
-        door.class.add("close-door")
-    } 
-    setTimeout(() => {
-        door.class.add("open-door")
-        door.class.remove("close-door")
-    }, 500);
-}
-
-const typeItIn = (title, element) => {
-    let i, newTitle = ""
-    for(i = 0; i < title.length; i++) {
-        setTimeout(() => {
-            newTitle += title[i]
-            element.textContent = title
-        }, 200);
-    }
-}
-
-// When mobile about btn is pressed display about page.
-_("#about-btn").listen("click", (e) => {
-    e.preventDefault()
-        let title =  _("#intro-text").children()[0]
-        typeItIn("A little about me...", title)
+// When desktop about btn is pressed display about page.
+$("#side-about-btn").on("click", () => {
         moveDoor()
+        $("#section-group").css("transform", "translate(100%)");
+        $("#intro").css("width", "100%");
         setTimeout(() => {
-            _(".about-me").attr("style", "display: grid");
-            _(".contact-me").hide();
+            $(".about-me").css("display", "grid");
+            $("#main-heading").text("A little about me...");
+            _(".contact-me").hide()
+            $("#intro").css("width", "60%");
+            $("#section-group").css("transform", "translate(0%)");
             _(".work").hide()
-        }, 520)
+        }, 500)
+        return false
+
 });
 
-// When mobile contact btn is pressed display contact page.
-document.querySelectorAll(".contact-btn").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        e.preventDefault()
-            moveDoor()
-            _("#intro-text").children()[0].textContent = "Lets ge in touch!"
-            setTimeout(() => {
-                _(".contact-me").attr("style", "display: grid")
-                _(".work").hide()
-                _(".about-me").hide();
-            }, 520)
-      
-    });
+// When desktop contact btn is pressed display work page.
+$("#side-work-btn").on("click", () => {
+    moveDoor()
+    $("#main-heading").text("This is some of my work...");
+    $("#section-group").css("transform", "translate(100%)")
+    $("#intro").css("width", "100%");
+    setTimeout(() => {
+        $("#section-group").css("transform", "translate(0%)");
+        $("#intro").css("width", "60%");
+        $(".work").css("display", "grid")
+        $(".contact-me").css("display", "none");
+        $(".about-me").css("display", "none");
+     
+    }, 500)
+    return false
 });
 
-// When mobile contact btn is pressed display work page.
-_("#work-btn").listen("click", (e) => {
-    e.preventDefault()
-        moveDoor()
-        _("#intro-text").children()[0].textContent = "This is some of my work..."
-        setTimeout(() => {
-            _(".work").attr("style", "display: grid")
-            _(".contact-me").hide();
-            _(".about-me").hide()
-        }, 520)
+$(window).on("resize", () => {
+    let windowWidth = parseInt(window.innerWidth)
+    if(windowWidth < 1365) {
+        _("#intro-text").children()[0].textContent = "Hi, I'm Dev the Developer.";
+        $("#intro").css("width", "100%");
+    } else {
+        _("#intro").class.remove("lock-top");
+        _(".main-nav").class.remove("back-nav");
+        $(".back-btn").removeClass("back-btn-visible");
+    }
+   
 });
 
+/*
+=====================================
+DESKTOP ANIMATIONS
+=====================================
+*/
 
-// // on window resize check if portrait
-// window.addEventListener("resize", () => {
-//     if(window.innerHeight < window.innerWidth) {
-//         document.querySelector(".piano").classList.add("open-piano")
-//     } else {
-//         document.querySelector(".piano").classList.remove("open-piano")
-//     }
-// });
+const slideInRight = (selector) => {
+    $(selector).addClass("slideInRight");
+}

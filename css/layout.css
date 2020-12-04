@@ -5,14 +5,23 @@ File: index.html
 */
 
 /* Univeral Layout styles*/
+#section-group {
+    transition: transform .5s;
+    transition-timing-function: ease-in-out;
+    width: 100%;
+    height: 100%;
+    float: right;
+    overflow: hidden;
+}
+
 .page-section {
     height: 100%;
-    width: 90%;
     margin: auto;
     padding: 14px;
     padding-bottom: 74px;
     column-gap: 14px;
     row-gap: 14px;
+    min-width: 375px;
 }
 
 .page-section h1 {
@@ -31,43 +40,30 @@ File: index.html
 }
 
 /* intro section */
-.doors {
+#intro {
     width: 100%;
     height: 100%;
     position: absolute;
     color: rgb(0, 0, 0);
-    transform: translateY(0vh);
-    transition: transform .5s ease-in-out;
+    transform: translateY(0%);
+    transition: transform .5s ease-in-out, width .5s;
     z-index: 9999;
-}
-
-#desktop-door {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    z-index: 10000;
-    transition: transform 1s;
-}
-
-
-#intro {
+    overflow: hidden;
+    pointer-events: none;
+    -moz-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
     display: grid;
+    align-items: center;
     grid-template-rows: 1fr;
     height: 100%;
-    align-items: center;
     background-color: #9e5a63;
-}
-
-#intro img {
-    position: absolute;
-    left: -500px;
+    overflow: hidden;
+    min-width: 375px;
 }
 
 #intro-text {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 40px 40px 74px 40px;
@@ -80,109 +76,15 @@ File: index.html
     color: #f5f5f5;
 }
 
-.lock-top {
-    transform: translateY(-100vh);
-}
-
-.piano {
-    display: none;
-    gap: 5px;
-    width: 100%;
-    padding: 0px 14px 14px 14px;
-    position: relative;
-    transform: translatey(-50vh);
-    transition: transform 1s ease-in-out;
-}
-
-.open-piano {
-    transform: translatey(0vh);
-}
-
-.key-set {
-    position: relative;
-    flex-basis: 100px;
-    flex-grow: 1;
+#intro-text > div {
+    height: 46.7px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 5px;
 }
 
-.key-set .key {
-    background-color: white;
-    flex-basis: 100px;
-    flex-grow: 2;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.key-set .chopstick {
-    background-color: black;
-    flex-basis: 100px;
-    flex-grow: 1;
-    position: absolute;
-    z-index: 10000;
-    width: 35%;
-    height: 80%;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.key-connect-set {
-    position: relative;
-    flex-basis: 100px;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-}
-
-.key-connect-set, .key-set {
-    display: none;
-}
-
-.key, .chopstick, .connect-chopstick {
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.key-connect-set .key {
-    background-color: white;
-    flex-basis: 100px;
-    flex-grow: 2;
-}
-
-.key-connect-set .chopstick {
-    background-color: black;
-    flex-basis: 100px;
-    flex-grow: 1;
-    position: absolute;
-    z-index: 10000;
-    width: 35%;
-    height: 80%;
-}
-
-.key-connect-set .connect-chopstick:nth-of-type(1) {
-    background-color: black;
-    flex-basis: 100px;
-    flex-grow:1;
-    left: -17%;
-    position: absolute;
-    z-index: 10000;
-    width: 35%;
-    height: 80%;
-  
-}
-
-.key-connect-set .connect-chopstick:last-of-type{
-    background-color: black;
-    flex-basis: 100px;
-    flex-grow: 1;
-    right: -17%;
-    position: absolute;
-    z-index: 10000;
-    width: 35%;
-    height: 80%;
+section.lock-top {
+    transform: translateY(-100%);
 }
 
 /* Navigation */
@@ -213,7 +115,7 @@ nav.main-nav ul {
     transform: translateX(0%); 
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-content: space-around;
     align-items: center;
     text-align: center;
@@ -253,11 +155,15 @@ nav.back-nav ul {
 
 nav.side-nav {
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     height: 100%;
     z-index: 10000;
     width: 60px;
     background-color: #314455;
+    position: relative;
+
 }
 
 nav.side-nav ul {
@@ -283,40 +189,33 @@ nav.side-nav a {
 }
 
 
-/* Skill section */
-.skill-bubbles {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 9998;
-}
+/* Work Section */
+.work::-webkit-scrollbar {
+	display: none;
+  }
+ /* Hide scrollbar for Chrome, Safari and Opera */
 
-.skill-bubbles div {
-    position: absolute;
-    background-color: #015871;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white; 
-    box-shadow: 4px 2px 30px black;
-}
-
-
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.work {
+	-ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow: scroll;
+  } 
 
 /* About Section */
-.about-me {
+section.about-me {
     grid-template-columns: 1fr;
     color: #f5f5f5;
 }
 
-.about-me div {
+section.about-me div {
     width: 100%;
     height: 100%;
 
 }
 
-.about-me div img {
+section.about-me div img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -372,6 +271,8 @@ nav.side-nav a {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
 }
 
+
+
 /* Work Section */
 .projects {
     width: 100%;
@@ -421,14 +322,13 @@ nav.side-nav a {
 
 @media screen and (min-width: 767px) {
     .about-me, .contact-me {
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-columns: 1fr ;
         grid-template-rows: 1fr;
         align-items: start;
     }
-    
-    /* piano */
-    .piano {
-        display: flex;
+
+    section#intro img {
+        display: block;
     }
 
     .key-connect-set:nth-of-type(1),
@@ -516,14 +416,10 @@ nav.side-nav a {
         display: flex;
     }
 
-    #desktop-door {
+    section#desktop-door {
         display: block;
         width: 40%;
         background-color: #9e5a63;
-    }
-
-    #intro {
-        width: 60%;
     }
 
     .work {
@@ -535,8 +431,12 @@ nav.side-nav a {
         display: none;
     }
 
-    .page-section {
+    #section-group {
         width: 40%;
+        transform: translateX(0%);
+    }
+
+    .page-section {
         margin: 0px;
         float: right;
     }

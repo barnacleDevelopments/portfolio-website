@@ -16,88 +16,34 @@
     <link rel="stylesheet" href="./css/reset.css"/>
     <link rel="stylesheet" href="./css/index.css"/>
     <link rel="stylesheet" href="./css/global.css"/>
+    <link rel="stylesheet" href="./css/utilities.css"/>
     <link rel="stylesheet" href="./css/animations.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
-    <section class="doors">
-        <section id="intro">
-            <img src="./img/logo_3.png" />
-            <!-- <div class="piano">
-                <div class="key-set">
-                    <div class="key"></div>
-                    <div class="chopstick"></div>
-                    <div class="key"></div>
-                </div>
-                <div class="key-connect-set">
-                    <div class="connect-chopstick"></div>
-                    <div class="key"></div>
-                    <div class="chopstick"></div>
-                    <div class="key"></div>
-                    <div class="connect-chopstick"></div>
-                </div>
-                <div class="key-set">
-                    <div class="key"></div>
-                    <div class="chopstick"></div>
-                    <div class="key"></div>
-                </div>
-                <div class="key-connect-set">
-                    <div class="connect-chopstick"></div>
-                    <div class="key"></div>
-                    <div class="chopstick"></div>
-                    <div class="key"></div>
-                    <div class="connect-chopstick"></div>
-                </div>
-                <div class="key-set">
-                    <div class="key"></div>
-                    <div class="chopstick"></div>
-                    <div class="key"></div>
-                </div>
-                <div class="key-connect-set">
-                    <div class="connect-chopstick"></div>
-                    <div class="key"></div>
-                    <div class="chopstick"></div>
-                    <div class="key"></div>
-                    <div class="connect-chopstick"></div>
-                </div>
-                <div class="key-set">
-                    <div class="key"></div>
-                    <div class="chopstick"></div>
-                    <div class="key"></div>
-                </div>
-            
-            </div> -->
-            <div id="intro-text">
-                <h1>Hi, I'm Dev <br> the Developer.</h1>
-                <button class="open-btn contact-btn contact-btn-1"><span>contact</span><span>me</span></button>
-            </div> 
-        </section>   
-        <section id="desktop-door"></section>
-    </section>
 
-    <section style="display: none;" class="page-section skill-bubbles">
-        <h2>skills</h2>
-            <div id="bubble-one"><i class="fab fa-node-js fa-lg"></i></div>
-            <div id="bubble-two"><i class="fab fa-js fa-lg"></i></div>
-            <div id="bubble-three"><i class="fab fa-react fa-lg"></i></div>
-            <div id="bubble-four"><i class="fab fa-github fa-lg"></i></div>
-            <div id="bubble-five"></div>
-            <div id="bubble-six"></div>
-    </section>
-
+<section id="intro">
+    <div id="intro-text">
+        <h1 id="main-heading">Hi, I'm Dev <br> the Developer.</h1>
+        <div>
+            <button class="contact-btn"><span>contact</span><span>me</span></button>
+        </div>
+    </div> 
+</section>
+<section id="section-group">
     <section style="display: none;" class=" page-section about-me">
         <div>
             <img src="./img/self-portrait.jpg">
         </div>
         <article class="text-area">
             <h1>About Me</h1>
-            <p>Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat.</p>
+            <p>Hey! Pleased to meet you. My name is Devin Davis and I'm a web development 
+               student attending the Nova Sctia Community College located in downtown Halifax.
+               I've been studying web development for a year on my own prior to attending the college
+               and I am looking foward to playing a part in building the web sector of my community.
+               After looking over my site, please get in touch. I've got itle hands just waiting to create 
+               something awesome with you! </p>
         </article>
     </section>
 
@@ -109,6 +55,9 @@
                 to help you on your jouney! Contact me with the
                 form bellow and I will be with you shortly. </p>
             </article>
+            <div>
+                <div id=""></div>
+            </div>
             <form id="fcf-form-id" class="fcf-form-class" name="myform" method="post" action="contact-form.php" >
                 <input type="text" name="Name" placeholder="Name"></input>
                 <input type="text" name="email" placeholder="Email"></input>
@@ -131,17 +80,8 @@
                     <p>Lorem ipsum dolor sit amet, 
                         consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt 
-                        ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div class="prod">
-                <img src="./img/logo.png" />
-                <div>
-                    <h1>Template</h1>
-                    <p>Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt 
-                        ut labore et dolore magna aliqua.</p>
+                        ut labore et dolore magna aliqua.
+                    </p>
                 </div>
             </div>
             <div class="prod">
@@ -196,23 +136,39 @@
             </div>
         </div>
     </section>
+</section>
+   
     <nav class="main-nav">
         <div class="back-btn"><i class="fas fa-arrow-left"></i></div>
         <ul class="nav-list">
-            <li id="mobile-home-btn"><img src="./img/logo_3.png"/></li>
-            <li class="mobile-contact-btn"><a href="" class="open-btn"><i class="fas fa-envelope fa-lg open-btn"></i></a></li>
-            <li id="mobile-about-btn"><a href="" class="open-btn"><i class="fas fa-user fa-lg open-btn"></i></a></li>
-            <li id="mobile-work-btn"><a href="" class="open-btn"><i class="fas fa-eye fa-lg open-btn"></i></a></li>
+            <li id="mobile-home-btn"><a href="https://www.instagram.com/nikd.art" target="_blanc"><img src="./img/logo_3.png"/></a></li>
+            <li class="contact-btn open-btn"><a href=""><i class="fas fa-envelope fa-lg"></i></a></li>
+            <li id="mobile-about-btn" class="open-btn"><a href="" ><i class="fas fa-user fa-lg"></i></a></li>
+            <li id="mobile-work-btn" class="open-btn"><a href="" ><i class="fas fa-eye fa-lg"></i></a></li>
+            <li id="mobile-skills-btn" class="open-btn"><a href="" ><i class="fas fa-th-list"></i></a></li>
         </ul>
     </nav>
      
     <nav class="side-nav">
-        <div class="back-btn"><i class="fas fa-arrow-left"></i></div>
         <ul class="nav-list">
-            <li id="home-btn"><img src="./img/logo_3.png"/></li>
-            <li class="contact-btn"><a href="" ><i class="fas fa-envelope fa-lg"></i></a></li>
-            <li id="about-btn"><a href=""><i class="fas fa-user fa-lg"></i></a></li>
-            <li id="work-btn"><a href=""><i class="fas fa-eye fa-lg"></i></a></li>
+            <li id="side-rep-btn" data-name="logo man">   
+                <div class="rep-bubble">
+                    <div class="left-arrow"></div>
+                    <div class="media-tag"><a href="https://www.instagram.com/nikd.art" target="_blanc"><i class="fab fa-instagram"></i> <span>Nikd.Art</span></a></div>
+                    <div class="media-tag"><a href="https://www.instagram.com/nikd.photos" target="_blanc"><i class="fab fa-instagram"></i> <span>Nikd.Photos</span></a></div>
+                </div>
+                <a href="https://www.instagram.com/nikd.art" target="_blanc">
+                <img src="./img/logo_3.png"/></a>
+            </li>
+            <li class="contact-btn side-contact-btn" data-name="contact"><a href="" ><i class="fas fa-envelope fa-lg"></i></a></li>
+            <li id="side-about-btn" data-name="about"><a href=""><i class="fas fa-user fa-lg"></i></a></li>
+            <li id="side-work-btn" data-name="work"><a href=""><i class="fas fa-eye fa-lg"></i></a></li>
+            <li id="side-skills-btn" data-name="skills"><a href=""><i class="fas fa-th-list"></i></a></li>
+
+        </ul>
+        <ul id="media-links">
+            <li class="linkedin-btn"><a href="https://www.linkedin.com/in/devin-dev-davis-63008412b/" target="_blanc" ><i class="fab fa-linkedin fa-lg"></i></a></li>
+            <li class="github-btn"><a href="https://github.com/barnacleDevelopments" target="_blanc"><i class="fab fa-github fa-lg"></i></a></li>
         </ul>
     </nav>
 
