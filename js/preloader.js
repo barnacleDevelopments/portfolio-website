@@ -32,8 +32,8 @@ const animatePreloader = () => {
     }, 600);
 }
 
-animatePreloader()
+// animatePreloader()
 
-setInterval(() => {
-    animatePreloader()
-}, 3600)
+// setInterval(() => {
+//     animatePreloader()
+// }, 3600)

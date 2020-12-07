@@ -116,7 +116,6 @@ const openMobileSection = (section) => {
         break
         case "contact":
             $(".contact-me").css("display", "grid")
-            $(".contact-me").css("height", "100%");
         break
         case "skills": {
             $(".skills").css("display", "grid");
@@ -198,4 +197,123 @@ $(window).on("resize", () => {
     }
 });
 
+const displaySkillLevel = (level) => {
+    $(".skill-level").children().text("")
+    $(".skill-level").children().css("height", "10px");
+    switch(level) {
+        case "beginner":
+            $(".skill-level").children(":nth-child(1)").css("height", "40px");
+            $(".skill-level").children(":nth-child(1)").text("beginner");
+            $(".skills").children("article").css("background-color", "#c96567")
+        break
+        case "intermediate":
+            $(".skill-level").children(":nth-child(2)").css("height", "40px");
+            $(".skill-level").children(":nth-child(2)").text("Intermediate");
+            $(".skills").children("article").css("background-color", "#9e5a63")
+        break
+        case "advanced":
+            $(".skill-level").children(":nth-child(3)").css("height", "40px");
+            $(".skill-level").children(":nth-child(3)").text("Advanced");
+            $(".skills").children("article").css("background-color", "#97aabd")
+       
 
+    }
+}
+
+$(".skills").children(".list").children().on("click", (e) => {
+    let selectedSkillId = e.target.closest("li").id
+    fetch("./data/skills.json")
+    .then(response => response.json())
+    .then(data =>  {
+        data.skills.forEach(s => {
+            if(s._id === parseInt(selectedSkillId)) {
+                $(".skills").children("article").remove();
+                let newSkillEl = new SkillContainer(
+                    s.name, 
+                    s.desc, 
+                    s.addonType, 
+                    s.addons
+                    ).create();
+                $(".skills").prepend(newSkillEl);
+                console.log(s.level)
+                displaySkillLevel(s.level)
+              
+            }
+        })
+    })
+
+    return false
+})
+
+
+// $("#node-js").on("click", () => {
+//     $(".skills").children("article").remove();
+
+//     let newArticle = new SkillContainer("Node-Js", 
+//     "A javascript runtime enviroment used to create network applications.", 
+//     "Frameworks", ["Express"], 
+//     "#c96567").create();
+//     $(".skills").prepend(newArticle);
+//     $(".skill-level").children().text("")
+//     $(".skill-level").children().css("height", "10px");
+//     $(".skill-level").children(":nth-child(1)").css("height", "40px");
+//     $(".skill-level").children(":nth-child(1)").text("beginner");
+//     return false
+// });
+
+// $("#html").on("click", () => {
+//     $(".skills").children("article").remove();
+//     let newArticle = new SkillContainer("HTML:5", 
+//     "The markup language of the web.", 
+//     "#97aabd").create()
+//     $(".skills").prepend(newArticle)
+//     $(".skill-level").children().text("")
+//     $(".skill-level").children().css("height", "10px");
+//     $(".skill-level").children(":nth-child(3)").css("height", "40px");
+//     $(".skill-level").children(":nth-child(3)").text("Advanced")
+//     return false
+// });
+
+// $("#css").on("click", () => {
+//     $(".skills").children("article").remove();
+//     let name ="Css3"
+//     let desc =  "Cascading style sheets is a languaged used to style HTML markup."
+//     let addons = [
+//         {
+//             name: "BootStrap", 
+//             link: "https://getbootstrap.com/"
+//         },
+//         {
+//             name: "Materialize", 
+//             link: "https://materializecss.com/getting-started.html"
+//         }
+//     ]
+
+//     let newArticle = new SkillContainer(name, desc, "Libaries", addons).create()
+    
+//     $(".skills").prepend(newArticle);
+//     $(".skill-level").children().text("")
+//     $(".skill-level").children().css("height", "10px");
+//     $(".skill-level").children(":nth-child(3)").css("height", "40px");
+//     $(".skill-level").children(":nth-child(3)").text("Advanced")
+//     return false
+// });
+
+// $("#js").on("click", () => {
+//     $(".skills").children("article").remove();
+//     let name = "ECMAscript(JavaScript)";
+//     let desc = "A scripting languaged orginaly designed to manipulate the DOM but is now widely used in other runtime enviroments."
+//     let addons = [
+//         {
+//             name: "ReactJs", 
+//             link: "https://reactjs.org/"
+//         }
+//       ]
+//     let newArticle = new SkillContainer(name, desc, "Libaries", addons).create()
+//     $(".skills").prepend(newArticle);
+//     $(".skill-level").children().text("")
+//     $(".skill-level").children().css("height", "10px");
+//     $(".skill-level").children(":nth-child(2)").css("height", "40px");
+//     $(".skill-level").children(":nth-child(2)").text("Intermediate")
+//     return false
+// });

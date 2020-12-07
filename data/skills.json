@@ -1,0 +1,54 @@
+{
+    "skills": [
+        {
+            "_id" : 4,
+            "name": "ECMAscript",
+            "level": "intermediate",
+            "desc": "A scripting languaged orginaly designed to manipulate the DOM but is now widely used in other runtime enviroments.",
+            "addonType": "libary",
+            "addons": [
+                {
+                    "name": "ReactJs", 
+                    "link": "https://reactjs.org/"
+                }
+            ]
+        },
+        {
+            "_id" : 2,
+            "name": "HTML5",
+            "level": "advanced",
+            "desc": "The markup language of the web.", 
+            "addons": []
+        },
+        {
+            "_id" : 3,
+            "name": "CSS3",
+            "level": "advanced",
+            "desc":  "Cascading style sheets is a languaged used to style HTML markup.",
+            "addonType": "libary",
+            "addons": [
+                {
+                    "name": "BootStrap", 
+                    "link": "https://getbootstrap.com/"
+                },
+                {
+                    "name": "Materialize", 
+                    "link": "https://materializecss.com/getting-started.html"
+                }
+            ]
+        },
+        {
+            "_id" : 1,
+            "name": "NodeJs",
+            "level": "beginner",
+            "desc": "A javascript runtime enviroment used to create network applications.",
+            "addonType": "libary",
+            "addons": [
+                {
+                    "name": "Express",
+                    "link": "https://expressjs.com/"
+                }
+            ]
+        }
+    ]
+}
