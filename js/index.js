@@ -37,7 +37,7 @@ const openDesktopSection = (section) => {
             $("#intro").css("width", "100%");
             closeSections()
             triggerLoadLine()
-            displayDesktopSection(".about-me", "A little about me...")
+            displayDesktopSection(".about-me", "A little about me...");
             break
             
         case "skills":
