@@ -5,7 +5,6 @@
     border-radius: 0px;
     background-color: #314455;
     color: white;
-
     text-transform: uppercase;
     font-weight: bold;
     bottom: 0px;
@@ -46,7 +45,6 @@ button.contact-btn {
     color: #f5f5f5;
     background-color: #97aabd;
     padding: 10px 20px;
-    margin-left: 10px ;
 }
 
 /* nav buttons */

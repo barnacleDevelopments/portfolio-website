@@ -16,6 +16,8 @@ File: index.html
     transition: transform .5s;
     transition-timing-function: ease-in-out;
     overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .page-section {
@@ -26,7 +28,8 @@ File: index.html
     min-width: 360px;
     padding-bottom: 74px;
     display: grid;
-
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .page-section h1 {
@@ -250,13 +253,7 @@ section.about-me img {
 }
 
 /* Work Section */
-.work::-webkit-scrollbar {
-	display: none;
-  }
-
 section.work {
-	-ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
     pointer-events: all;
 } 
 
@@ -274,24 +271,27 @@ section.work article {
     flex-shrink: 0;
     color: #f5f5f5;
     background-color: #f5f5f5;
+    border-radius: 5px;
+    position: relative;
 }
 
 .prod div {
     background-color: #314455;
-    padding: 20px 10px;
+    padding: 20px 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .prod button {
-    margin-top: 10px;
+    margin-top: 15px;
 }
-
 
 .prod img {
     width: 100%;
     max-width: 100%;
 }
 
-  /* skills section */
+/* skills section */
 section.skills {
     grid-template-rows: 1fr .5fr;
     padding-bottom: 60px;
@@ -356,15 +356,15 @@ div.skill-level > div:nth-child(3) {
 
 section.skills > ul.list {
     display: flex;
-    align-items: flex-start;
     column-gap: 14px;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 section.skills > ul.list > li {
-    flex-basis: 0px;
-    flex-grow: 1;
-    flex-shrink: 1;
+    flex-basis: 90px;
+    flex-grow: 0;
+    flex-shrink: 0;
     text-align: center;
     background-color: #9e5a63;
     border-radius: 5px;
@@ -404,9 +404,7 @@ section.skills aside li {
     flex-shrink: 1;
     flex-basis: 100px;
     text-align: center;
-
 }
-
 
 section.skills aside a {
     text-decoration: none;
@@ -414,14 +412,14 @@ section.skills aside a {
 }
 
 /* section studies */
-section.studies ul.list {
+section.studies > ul.list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     column-gap: 14px;
     row-gap: 14px;
-    overflow: auto;
-    
+    margin-top: 465px;
+    margin-bottom: 14px;
 }
 
 section.studies ul.list > li {
@@ -514,8 +512,13 @@ section.studies ul.list img {
         flex-basis: 60px;
         flex-grow: 2;
         flex-shrink: 2;
-
     }
+    
+    /* about section */
+    section.about-me {
+        align-items: stretch;
+    }
+
 }
 
 /* tablets portrait */
@@ -571,7 +574,6 @@ section.studies ul.list img {
     /* about section  */
     section.about-me {
         grid-template-columns: 1fr;
-        height: 100%;
     }
    
     /* contact section */
@@ -594,7 +596,9 @@ section.studies ul.list img {
 }
 /* desktop pcs */
 @media screen and (min-width: 1366px) {
- 
+    section.about-me, section.work {
+        width: 80%;
+    }
 }
 
 
