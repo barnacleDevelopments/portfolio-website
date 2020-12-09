@@ -170,7 +170,6 @@ $(window).on("resize", () => {
     if(windowWidth < 1023) {
         $("#main-heading").text("Hi, I'm Dev the Developer.");
         $("#intro").css("width", "100%");
-        $(".page-section").css("height", "100%")
     } else {
         $("#intro").css("transform", "translateY(0%)");
         $(".main-nav").removeClass("back-nav");

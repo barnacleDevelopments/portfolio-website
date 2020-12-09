@@ -205,8 +205,8 @@ nav.side-nav a {
 
 /* About Section */
 section.about-me img {
-    width: 100%;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+    width: 100%; 
+    object-fit: cover;
 }
 
 /* Contact Section */
@@ -419,13 +419,16 @@ section.skills aside a {
 }
 
 /* section studies */
+section.studies {
+    height: 100%;
+}
+
 section.studies > ul.list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     column-gap: 14px;
     row-gap: 14px;
-    margin-top: 465px;
     margin-bottom: 14px;
 }
 
@@ -452,7 +455,10 @@ section.studies ul.list img {
 
 
 @media screen and (min-width: 420px) {
-
+    section.page-section {
+        width: 100%;
+        align-items: stretch;
+    }
    
 }
 
@@ -461,9 +467,10 @@ section.studies ul.list img {
     /* about section */
     section.about-me, section.work {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 
-    section.work  article{
+    section.work article{
         grid-column-start: 1;
         grid-column-end: 3;
     }
@@ -480,7 +487,19 @@ section.studies ul.list img {
 }
 
 @media screen and (min-width: 767px) {
+    section#intro {
+        padding-left: 60px;
+    }
+
+    section.page-section {
+        height: initial;
+    }
+    
     /* work section */
+    section.work {
+        grid-template-columns: 1fr;
+    }
+
     .projects {
         display: flex;
         flex-direction: column;
@@ -516,6 +535,8 @@ section.studies ul.list img {
     /* about section */
     section.about-me {
         align-items: stretch;
+        width: 100%;
+        margin: 0px;
     }
 
 }
@@ -532,10 +553,9 @@ section.studies ul.list img {
 
     section.page-section {
         padding-bottom: 14px;
-    }
-
-    section#intro {
-        padding-left: 60px;
+        margin: 0;
+        height: 100%;
+        align-content: center;
     }
 
     /* navigation */
@@ -548,20 +568,8 @@ section.studies ul.list img {
     }
 
     /* work section */
-    section.work {
-        grid-template-columns: 1fr;
-    }
-
     section.work .text-area {
         display: none;
-    }
-
-    section.projects {
-        justify-content: center;
-    }
-
-    section.projects > div {
-        flex-basis: 100%;     
     }
 
     /* skills section */
@@ -583,10 +591,6 @@ section.studies ul.list img {
 
 /* tablets landscape */
 @media screen and (min-width: 1365px) {
-   /* work section */
-   .projects > div {
-    flex-basis: 48%;     
-    }
 
     /* skills section */
     section.skills {
@@ -595,9 +599,7 @@ section.studies ul.list img {
 }
 /* desktop pcs */
 @media screen and (min-width: 1366px) {
-    section.about-me, section.work {
-        width: 80%;
-    }
+ 
 }
 
 
