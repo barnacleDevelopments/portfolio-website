@@ -17,7 +17,7 @@ class SkillContainer {
         // create primary elements
         let element = document.createElement("article");
         element.classList.add("text");
-        let heading1 = document.createElement("h1")
+        let heading1 = document.createElement("h2")
         element.style.backgroundColor = this.color;
         heading1.textContent = this.name;
         let description = document.createElement("p")
@@ -32,7 +32,7 @@ class SkillContainer {
     addAddons(element) {
         let addonContainer = document.createElement("aside");
 
-        let heading2 = document.createElement("h2")
+        let heading2 = document.createElement("h3")
         heading2.textContent = this.addonName;
         let addons = document.createElement("ul");
         // append each addon to addon list

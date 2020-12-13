@@ -1,7 +1,7 @@
-/* 
+/*
 Author: Devin Davis
 Date: Novemeber 12th, 2020
-File: index.html 
+File: index.html
 */
 
 /* Univeral Layout styles*/
@@ -10,7 +10,6 @@ File: index.html
     transition-timing-function: ease-in-out;
     width: 100%;
     height: 100%;
-    float: right;
     overflow: hidden;
     transform: translate(100%);
     transition: transform .5s;
@@ -20,12 +19,15 @@ File: index.html
     scrollbar-width: none;  /* Firefox */
 }
 
+.page-section::-webkit-scrollbar, #section-group::-webkit-scrollbar {
+    width: 0;
+}
+
 .page-section {
     margin: 0 auto;
     padding: 14px;
     column-gap: 14px;
     row-gap: 14px;
-    min-width: 360px;
     padding-bottom: 74px;
     display: grid;
     -ms-overflow-style: none;  /* IE and Edge */
@@ -33,12 +35,10 @@ File: index.html
 }
 
 .page-section h1 {
-    font-size: 2em;
     margin: 5px 0px 9px 0px;
 }
 
 .page-section h2 {
-    font-size: 2em;
     margin-bottom: 10px;
     color: #f5f5f5;
 }
@@ -69,7 +69,6 @@ File: index.html
     height: 100%;
     background-color: #9e5a63;
     overflow: hidden;
-    min-width: 375px;
 }
 
 #intro-text {
@@ -82,7 +81,6 @@ File: index.html
 }
 
 #intro-text h1 {
-    font-size: 3em;
     margin-bottom: 30px;
     color: #f5f5f5;
 }
@@ -123,10 +121,9 @@ nav.main-nav img {
 
 nav.main-nav ul {
     transition: transform 1s ease-in-out;
-    transform: translateX(0%); 
+    transform: translateX(0%);
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
@@ -139,6 +136,8 @@ nav.main-nav ul {
 nav.main-nav ul > li {
     display: flex;
     align-items: center;
+    flex-basis: 0;
+    flex-grow: 1;
     justify-content: center;
     background-color: #314455;
     height: 100%;
@@ -161,7 +160,7 @@ nav.back-nav {
 }
 
 nav.back-nav ul {
-    transform: translateX(100%); 
+    transform: translateX(100%);
 }
 
 nav.side-nav {
@@ -205,8 +204,26 @@ nav.side-nav a {
 
 /* About Section */
 section.about-me img {
-    width: 100%; 
+    width: 100%;
     object-fit: cover;
+}
+
+section.about-me p {
+    letter-spacing: 1.5%;
+    font-size: 16px;
+    line-height: 120%;
+    margin-bottom: 10px;
+}
+
+section.about-me ul {
+    margin-bottom: 18px;
+    margin-top: 14px;
+    list-style-type: decimal;
+    margin-left: 40px;
+}
+
+section.about-me li {
+    margin-bottom: 10px;
 }
 
 /* Contact Section */
@@ -255,7 +272,7 @@ section.about-me img {
 /* Work Section */
 section.work {
     pointer-events: all;
-} 
+}
 
 section.work article {
     height: fit-content;
@@ -307,8 +324,6 @@ section.skills .text {
     border-radius: 5px;
 }
 
-
-
 section.skills .text h1 {
     background-color: #314455;
     padding: 10px;
@@ -322,6 +337,75 @@ section.skills .text h2 {
     border-radius: 5px;
 }
 
+section.skills article.text {
+    margin-top: 40px;
+}
+
+section.skills > div.list-container {
+    overflow-x: scroll;
+}
+section.skills div > ul.list {
+    display: flex;
+    column-gap: 14px;
+    row-gap: 14px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 0px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+section.skills div > ul.list > li {
+    flex-basis:0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    background-color: #9e5a63;
+    border-radius: 5px;
+}
+
+section.skills div > ul.list a {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+section.skills div > ul.list li:hover {
+    background-color: #f5f5f5;
+}
+
+section.skills div > ul.list li:hover i {
+    color: black;
+}
+
+section.skills div > ul.list i {
+    color: #f5f5f5;
+
+}
+
+section.skills aside ul {
+    display: flex;
+}
+
+section.skills aside li {
+    padding: 10px 20px;
+    background-color: #314455;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100px;
+    text-align: center;
+}
+
+section.skills aside a {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+
 div.skill-level {
     width: 100%;
     display: flex;
@@ -333,9 +417,6 @@ div.skill-level {
     row-gap: 14px;
 }
 
-section.skills article.text {
-    margin-top: 40px;
-}
 
 div.skill-level > div {
     height: 10px;
@@ -357,70 +438,10 @@ div.skill-level > div:nth-child(3) {
     height: 40px;
 }
 
-
-section.skills > ul.list {
-    display: flex;
-    column-gap: 14px;
-    row-gap: 14px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    margin-top: 0px;
-}
-
-section.skills > ul.list > li {
-    flex-basis: 90px;
-    flex-grow: 0;
-    flex-shrink: 0;
-    text-align: center;
-    background-color: #9e5a63;
-    border-radius: 5px;
-}
-
-section.skills > ul.list a {
-    padding: 10px;
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-}
-
-section.skills > ul.list li:hover {
-    background-color: #f5f5f5;
-}
-
-section.skills > ul.list li:hover i {
-    color: black;
-}
-
-section.skills > ul.list i {
-    color: #f5f5f5;
-
-}
-
-section.skills aside ul {
-    display: flex;
-}
-
-section.skills aside li {
-    padding: 10px 20px;
-    background-color: #314455; 
-    border-radius: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 100px;
-    text-align: center;
-}
-
-section.skills aside a {
-    text-decoration: none;
-    color: #f5f5f5;
-}
-
 /* section studies */
 section.studies {
     height: 100%;
+    width: 100%;
 }
 
 section.studies > ul.list {
@@ -430,6 +451,7 @@ section.studies > ul.list {
     column-gap: 14px;
     row-gap: 14px;
     margin-bottom: 14px;
+    align-items: center;
 }
 
 section.studies ul.list > li {
@@ -446,28 +468,77 @@ section.studies ul.list img {
     object-fit: contain;
 }
 
+/* Nokia 8110 support */
+@media screen and (max-width: 240px) {
+   body {
+    min-width: 240px;
+   }
+
+   nav.main-nav ul li:nth-of-type(1) {
+    display: none;
+   }
+
+   section#intro h1 {
+    font-size: 2.1em;
+   }
+
+   section.skills h3 {
+       display: none;
+   } 
+
+   section.skills aside {
+       display: none;
+   }
+
+   section.skills h2 {
+       font-size: 1.2em;
+   }
+
+   section.skills p {
+       font-size: .8em;
+   }
+
+   section.skills > div.skill-level{
+       font-size: .6em;
+       font-weight: bold;
+   }
+
+   section.skills i {
+       font-size: 1.8em;
+   }
+
+   section.skills ul.list {
+       align-items: center;
+   }
+
+}
+
 
 /* smartphone portrait */
 @media screen and (min-width: 375px) {
+    body {
+        min-width: 360px;
+    }
 
+    section.page-section {
+        width: 100%;
+        align-items: stretch;
+    }
 
 }
 
 
 @media screen and (min-width: 420px) {
-    section.page-section {
-        width: 100%;
-        align-items: stretch;
-    }
-   
+
+
 }
 
 /* smartphone landscape */
 @media screen and (min-width: 667px) {
     /* about section */
-    section.about-me, section.work {
+    section.about-me {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;  
     }
 
     section.work article{
@@ -482,7 +553,19 @@ section.studies ul.list img {
 
     /* skills section */
     section.skills {
-        grid-template-columns: 1.5fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+    }
+
+    section.skills > div.list-container {
+        overflow-x: unset;
+        margin-top: 40px;
+    }
+
+    
+
+    section.skills div > ul.list {
+        flex-wrap: wrap;
     }
 }
 
@@ -494,7 +577,13 @@ section.studies ul.list img {
     section.page-section {
         height: initial;
     }
-    
+
+   /* skills section */
+   section.skills {
+    grid-template-columns: 1fr .8fr;
+    height: 100%;
+    }
+
     /* work section */
     section.work {
         grid-template-columns: 1fr;
@@ -510,9 +599,9 @@ section.studies ul.list img {
     .projects div {
         flex-grow: 0;
         flex-shrink: 0;
-        flex-basis: 49%;     
+        flex-basis: 49%;
     }
-    
+
 
     /* contact setion */
     section.contact-me form {
@@ -531,7 +620,7 @@ section.studies ul.list img {
         flex-grow: 2;
         flex-shrink: 2;
     }
-    
+
     /* about section */
     section.about-me {
         align-items: stretch;
@@ -546,16 +635,16 @@ section.studies ul.list img {
     section#section-group {
         width: 40%;
         transform: translateX(0%);
-        justify-content: center;
-        align-items: center;
+
+        
         display: flex;
+        float: right;
     }
 
     section.page-section {
         padding-bottom: 14px;
         margin: 0;
         height: 100%;
-        align-content: center;
     }
 
     /* navigation */
@@ -582,7 +671,7 @@ section.studies ul.list img {
     section.about-me {
         grid-template-columns: 1fr;
     }
-   
+
     /* contact section */
     section.contact-me {
         grid-template-columns: 1fr;
@@ -599,7 +688,7 @@ section.studies ul.list img {
 }
 /* desktop pcs */
 @media screen and (min-width: 1366px) {
- 
+
 }
 
 

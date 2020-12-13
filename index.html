@@ -6,12 +6,14 @@
         Date: Novemeber 12th, 2020
         File: index.html
      -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="white"/>
     <title>DevDeveloper Portfolio</title>
+    <!-- <link rel="manifest" href="./manifest.json"> -->
     <script src="https://kit.fontawesome.com/2cea744347.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./css/layout.css"/>
     <link rel="stylesheet" href="./css/reset.css"/>
     <link rel="stylesheet" href="./css/index.css"/>
@@ -19,7 +21,6 @@
     <link rel="stylesheet" href="./css/utilities.css"/>
     <link rel="stylesheet" href="./css/animations.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 </head>
 <body>
     <!-- <section style="display: none;" id="spinner">
@@ -41,23 +42,50 @@
     <section style="display: none;" class=" page-section about-me">
         <img src="./img/self-portrait.jpg"/>
         <article class="text-area">
-            <h1>About Me</h1>
-            <p>Hey! My name is Devin Davis and I'm a web development 
-               student attending the Nova Sctia Community College.
-               I've been studying web development for a year on my own prior to attending the college
-               and I am looking forward to playing a part in building the web sector of my community.
-               After looking over my site, please get in touch. I've got itle hands just waiting to create 
-               something awesome with you! </p>
+            <h2>About Me</h2>
+            <p>Hey! My name is Devin Davis and I'm a web development
+                student attending the Nova Scotia Community College. 
+                I've been studying web development for a year on my own prior to attending the college 
+                and I am looking forward to playing a part in building the web sector of my community. 
+                After looking over my site, please get in touch. I've got idle hands just waiting to create  
+                something awesome with you! </p>
+            </article>
+        <article class="text-area">
+            <h2>Goals</h2>
+            <p>I want to increase my professional competencies, so I set some SMART goals to accomplish them. </p>
+            <h3>Short Term (Next 3 months)</h3>
+            <ul>
+                <li>Complete W3 Schools PHP Course.</li>
+                <li>Determine 5 companies to work for.</li>
+                <li>Read half of the Calculus for Dummies textbook and do the assignments. </li>
+            </ul>
+            <h3>Mid Term (Next 2 years)</h3>
+            <ul>
+                <li>Become a web developer for a company in Halifax.</li>
+                <li>Complete my NSCC deploma.</li>
+                <li>Learn the basics of calculus.</li>
+            </ul>
+
+            <h3>Long Term (Next 5 years)</h3>
+            <uL>
+                <li>Create or help create a full scale startup web application.</li>
+            </uL>
         </article>
+        <img src="./img/self_portrait_2.jpg"/>
+        <article>
+            <h2></h2>
+            
+        </article>
+        <img src=""/>
     </section>
 
     <section style="display: none;" class="page-section contact-me">
             <article class="text-area">
-                <h1>Contact Me</h1>
-                <p>I'm always seeking new opportuties to
-                create and learn awesome things and I'd love
-                to help you on your jouney! Contact me with the
-                form bellow and I will be with you shortly. </p>
+                <h2>Contact Me</h2>
+                <p>I'm always seeking new opportunities to
+                    create and learn awesome things and I'd love
+                    to help you on your journey! Contact me with the
+                    form bellow and I will be with you shortly.  </p>
             </article>
             <form id="fcf-form-id" class="fcf-form-class" name="myform" method="post" action="contact-form.php" >
                 <input type="text" name="Name" placeholder="Name"></input>
@@ -68,20 +96,27 @@
     </section>
 
     <section style="display: none;" class="page-section skills">
-        <article class="text">
-            <h1>HTML:5</h1>
-            <p>The markup language of the web.</p>
-        </article>
-        <ul class="list">
-            <li id="1"><a href="/"><i class="fab fa-node-js fa-4x"></i></a></li>
-            <li id="2"><a href="/"><i class="fab fa-html5 fa-4x"></i></a></li>
-            <li id="3"><a href="/"><i class="fab fa-css3-alt fa-4x"></i></a></li>
-            <li id="4"><a href="/"><i class="fab fa-js-square fa-4x"></i></a></li>
-        </ul>
         <div class="skill-level">
             <div data-text="Beginner"></div>
             <div data-text="Novice"></div>
             <div data-text="Advanced">Advanced</div>
+        </div>
+
+        <article class="text">
+            <h2>HTML:5</h2>
+            <p>The markup language of the web.</p>
+        </article>
+        <div class="list-container">
+            <ul class="list">
+                <li id="1"><a href="/"><i class="fab fa-node-js fa-4x"></i></a></li>
+                <li id="2"><a href="/"><i class="fab fa-html5 fa-4x"></i></a></li>
+                <li id="3"><a href="/"><i class="fab fa-css3-alt fa-4x"></i></a></li>
+                <li id="4"><a href="/"><i class="fab fa-js-square fa-4x"></i></a></li>
+                <li id="5"><a href="/"><i class="fas fa-database fa-4x"></i></a></li>
+                <li id="6"><a href="/"><i class="fas fa-database fa-4x"></i></a></li>
+                <li id="7"><a href="/"><i class="fab fa-php fa-4x"></i></a></li>
+                <li id="8"><a href="/"><i class="fab fa-github fa-4x"></i></a></li>
+            </ul>
         </div>
     </section>
 
@@ -89,18 +124,15 @@
         <article class="text-area">
             <h1>My Work</h1>
             <p>This is my current collection of work projects as it stands. 
-                I'm looking foward to facing new challenging projects.</p>
+                I'm looking forward to facing new challenging projects.</p>
         </article>
         <div class="projects">
             <div class="prod">
                 <img src="./img/ip7.png" />
                 <div class="text">
                     <h2>Iron Phoenix</h2>
-                    <p>Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt 
-                        ut labore et dolore magna aliqua.
-                    </p>
+                    <p>An app my partner and I working on. It is still in development. 
+                    </p> 
                     <button class="prod-btn">Explore</button>
                 </div>
             </div>
@@ -151,6 +183,7 @@
             <li class="github-btn"><a href="https://github.com/barnacleDevelopments" target="_blanc"><i class="fab fa-github fa-lg"></i></a></li>
         </ul>
     </nav>
+    <!-- <script src="./main.js"></script> -->
     <script src="./js/components/SkillContainer.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/preloader.js"></script>

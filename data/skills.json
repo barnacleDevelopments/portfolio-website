@@ -49,6 +49,40 @@
                     "link": "https://expressjs.com/"
                 }
             ]
+        },
+        {
+            "_id" : 5,
+            "name": "MongoDB",
+            "level": "beginner",
+            "desc": "A non-relational database.",
+            "addonType": "",
+            "addons": []
+        },
+        {
+            "_id" : 6,
+            "name": "MariaDB",
+            "level": "beginner",
+            "desc": "A relational database.",
+            "addonType": "",
+            "addons": []
+        },
+        {
+            "_id" : 7,
+            "name": "PHP",
+            "level": "beginner",
+            "desc": "A serverside scripting language used to create dynamic and data-driven web applications.",
+            "addonType": "",
+            "addons": []
+        },
+        {
+            "_id" : 8,
+            "name": "GitHub",
+            "level": "intermediate",
+            "desc": "A service that provides version control and hosting for software development.",
+            "addonType": "",
+            "addons": []
         }
+
+
     ]
 }

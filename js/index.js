@@ -63,7 +63,6 @@ const openDesktopSection = (section) => {
             closeSections()
             triggerLoadLine()
             displayDesktopSection(".contact-me", "Lets get in touch...")
-            $(".contact-me").css("height", "50%");
         break
         case "studies": 
             $("#section-group").css("transform", "translate(100%)");
@@ -201,7 +200,7 @@ const displaySkillLevel = (level) => {
     }
 }
 
-$(".skills").children(".list").children().on("click", (e) => {
+$(".skills").children(".list-container").children(".list").children().on("click", (e) => {
     let selectedSkillId = e.target.closest("li").id
     fetch("./data/skills.json")
     .then(response => response.json())
