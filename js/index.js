@@ -200,6 +200,8 @@ const displaySkillLevel = (level) => {
     }
 }
 
+
+
 $(".skills").children(".list-container").children(".list").children().on("click", (e) => {
     let selectedSkillId = e.target.closest("li").id
     fetch("./data/skills.json")

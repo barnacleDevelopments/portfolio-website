@@ -16,7 +16,7 @@
 
 button.contact-btn {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
-    width: 100px;
+    width: fit-content;
     transition: background-color 1s;
     transition: border-width .5s;
     transition: border-color .5s;

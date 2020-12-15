@@ -5,11 +5,23 @@
             "name": "ECMAScript",
             "level": "intermediate",
             "desc": "A scripting languaged orginaly designed to manipulate the DOM but is now widely used in other runtime enviroments.",
-            "addonType": "Libraries",
+            "addonType": "Libraries & Frameworks",
             "addons": [
                 {
-                    "name": "ReactJs", 
+                    "name": "React", 
                     "link": "https://reactjs.org/"
+                },
+                {
+                    "name": "Vue",
+                    "link": "https://vuejs.org/"
+                },
+                {
+                    "name": "Angular",
+                    "link": "https://angular.io/"
+                },
+                {
+                    "name": "Knockout",
+                    "link": "https://angular.io/https://knockoutjs.com/"
                 }
             ]
         },
