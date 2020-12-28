@@ -9,6 +9,10 @@ html, body {
  overflow: hidden;
 }
 
+#root {
+    height: 100%;
+}
+
 body {
     margin: 0px;
     background-color: #c96567;

@@ -1,0 +1,15 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "GitHub",
+            "desc": "Check out my GitHub!",
+            "link": "https://github.com/barnacleDevelopments"
+        },
+        {
+            "id": 2,
+            "title": "Helper API",
+            "desc": "Adds a tutorial service to your website!"
+        }
+    ]
+}
