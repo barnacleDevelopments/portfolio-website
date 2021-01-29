@@ -14,8 +14,9 @@ import "../css/global.css"
 import "../css/index.css"
 import "../css/layout.css"
 import "../css/utilities.css"
+import "../css/animations.css"
 
-import * as $ from "jquery"
+import $ from "jquery"
 import { closeSections, openSection, displaySkillLevel } from "./functions/navigation"
 import SkillContainer from "./components/SkillContainer"
 
@@ -37,7 +38,7 @@ $(".about-btn").on("click", () => {
     openSection("about");
     return false;
 });
-      
+
 // When mobile contact btn is pressed display work page.
 $(".work-btn").on("click", () => {
     openSection("work");
@@ -61,27 +62,16 @@ $(".studies-btn").on("click", () => {
 });
 
 $(window).on("resize", () => {
-    let windowWidth:number = window.innerWidth
-    if(windowWidth < 1023) {
+    let windowWidth: number = window.innerWidth
+    if (windowWidth < 1023) {
         $("#main-heading").text("Hi, I'm Dev the Developer.");
         $("#intro").css("width", "100%");
     } else {
         $("#intro").css("transform", "translateY(0%)");
         $(".main-nav").removeClass("back-nav");
         $(".back-btn").removeClass("back-btn-visible");
-      
     }
 });
-
-const api = (url: string) => {
-    fetch(url)
-    .then(data => data.json())
-    .then(response => {
-        console.log(response)
-    })
-}
-
-api("../data/skills.json")
 
 interface skill {
     _id: number,
@@ -93,29 +83,35 @@ interface skill {
 }
 
 $(".skills").children(".list-container")
-.children(".list")
-.children()
-.on("click", (e: any) => {
-    let selectedSkillId = e.target.closest("li").id
-    fetch("../data/skills.json")
-    .then(response => response.json())
-    .then(data =>  {
-        data.skills.forEach((s: skill) => {
-            if(s._id === parseInt(selectedSkillId)) {
-                $(".skills").children("article").remove();
-                let newSkillEl = new SkillContainer(
-                    s.name, 
-                    s.desc, 
-                    s.addonType, 
-                    s.addons,
-                    ).create();
-                $(".skills").prepend(newSkillEl);
-                console.log(s.level);
-                displaySkillLevel(s.level);
-              
+    .children(".list")
+    .children()
+    .on("click", (e: any) => {
+        let selectedSkillId = e.target.closest("li").id
+        fetch("./skills.json", {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
-        });
-    }).catch(err => console.log(err))
+        })
+            .then(response => response.json())
+            .then(data => {
+                data.skills.forEach((s: skill) => {
+                    if (s._id === parseInt(selectedSkillId)) {
+                        $(".skills")
+                            .children("article")
+                            .remove();
+                        let newSkillEl = new SkillContainer(
+                            s.name,
+                            s.desc,
+                            s.addonType,
+                            s.addons,
+                        ).create();
 
-    return false
-});
+                        $(".skills").prepend(newSkillEl);
+                        displaySkillLevel(s.level);
+                    }
+                });
+            }).catch(err => console.log(err))
+
+        return false
+    });

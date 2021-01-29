@@ -1,14 +1,14 @@
 {
     "skills": [
         {
-            "_id" : 4,
+            "_id": 4,
             "name": "ECMAScript",
             "level": "intermediate",
             "desc": "A scripting languaged orginaly designed to manipulate the DOM but is now widely used in other runtime enviroments.",
             "addonType": "Libraries & Frameworks",
             "addons": [
                 {
-                    "name": "React", 
+                    "name": "React",
                     "link": "https://reactjs.org/"
                 },
                 {
@@ -26,33 +26,33 @@
             ]
         },
         {
-            "_id" : 2,
+            "_id": 2,
             "name": "HTML:5",
             "level": "advanced",
-            "desc": "The markup language of the web.", 
+            "desc": "The markup language of the web.",
             "addons": []
         },
         {
-            "_id" : 3,
+            "_id": 3,
             "name": "CSS3",
             "level": "advanced",
-            "desc":  "Cascading style sheets is a languaged used to style HTML markup.",
+            "desc": "Cascading style sheets is a languaged used to style HTML markup.",
             "addonType": "Libraries",
             "addons": [
                 {
-                    "name": "BootStrap", 
+                    "name": "BootStrap",
                     "link": "https://getbootstrap.com/"
                 },
                 {
-                    "name": "Materialize", 
+                    "name": "Materialize",
                     "link": "https://materializecss.com/getting-started.html"
                 }
             ]
         },
         {
-            "_id" : 1,
+            "_id": 1,
             "name": "NodeJs",
-            "level": "beginner",
+            "level": "intermediate",
             "desc": "A javascript runtime enviroment used to create network applications.",
             "addonType": "Frameworks",
             "addons": [
@@ -63,15 +63,20 @@
             ]
         },
         {
-            "_id" : 5,
+            "_id": 5,
             "name": "MongoDB",
             "level": "beginner",
             "desc": "A non-relational database.",
             "addonType": "",
-            "addons": []
+            "addons": [
+                {
+                    "name": "mongoose",
+                    "link": "https://mongoosejs.com/"
+                }
+            ]
         },
         {
-            "_id" : 6,
+            "_id": 6,
             "name": "MariaDB",
             "level": "beginner",
             "desc": "A relational database.",
@@ -79,7 +84,7 @@
             "addons": []
         },
         {
-            "_id" : 7,
+            "_id": 7,
             "name": "PHP",
             "level": "beginner",
             "desc": "A serverside scripting language used to create dynamic and data-driven web applications.",
@@ -87,14 +92,12 @@
             "addons": []
         },
         {
-            "_id" : 8,
+            "_id": 8,
             "name": "GitHub",
             "level": "intermediate",
             "desc": "A service that provides version control and hosting for software development.",
             "addonType": "",
             "addons": []
         }
-
-
     ]
 }
