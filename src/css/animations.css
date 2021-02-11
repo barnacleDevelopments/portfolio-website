@@ -88,8 +88,6 @@ li.contact-btn:hover::before {
     transition: transform .3s;
     transform-origin: left;
     transform: scale(0%);
-
-
 }
 
 #side-rep-btn:hover .rep-bubble {

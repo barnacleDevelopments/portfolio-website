@@ -49,6 +49,7 @@ File: index.html
     padding: 14px;
     box-sizing: border-box;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+    border-radius: 4px;
 }
 
 /* intro section */
@@ -197,7 +198,6 @@ nav.side-nav img {
 nav.side-nav a {
     display: flex;
     align-items: center;
-    justify-content: center;
     text-decoration: none;
     color: #f5f5f5
 }
@@ -306,6 +306,7 @@ section.work article {
     background-color: #f5f5f5;
     border-radius: 5px;
     width: 100%;
+    margin-bottom: 14px;
 }
 
 .prod div {
@@ -328,7 +329,6 @@ section.work article {
 
 /* skills section */
 section.skills {
-    grid-template-rows: 1fr .5fr;
     padding-bottom: 60px;
     height: 100%;
     background-color: #314455;
@@ -340,6 +340,7 @@ section.skills .text {
     background-color:#97aabd;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 1px 1px 0px 1px #00000040;
 }
 
 section.skills .text h1 {
@@ -367,6 +368,10 @@ section.skills div > ul.list {
     margin-top: 0px;
     flex-wrap: nowrap;
     overflow-x: scroll;
+    box-shadow: inset 0px 0px 5px #00000069;
+    padding: 9px;
+    border-radius: 4px;
+
 }
 
 section.skills div > ul.list > li {
@@ -383,6 +388,8 @@ section.skills div > ul.list a {
     height: 100%;
     width: 100%;
     display: inline-block;
+    box-shadow: 1px 1px 0px 1px #00000029;
+border-radius: 4px;
 }
 
 section.skills div > ul.list li:hover {
@@ -433,6 +440,7 @@ div.skill-level {
     row-gap: 14px;
     background-color: #314455;
     height: 40px;
+    padding: 0px 14px 0px 14px;
 }
 
 
@@ -445,6 +453,9 @@ div.skill-level > div {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 1px 1px 0px 1px #00000040;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
 div.skill-level > div:nth-child(2) {
@@ -607,13 +618,6 @@ section.studies ul.list img {
     /* work section */
     section.work {
         grid-template-columns: 1fr;
-    }
-
-    .projects {
-        display: flex;
-        flex-direction: column;
-        column-gap: 14px;
-        row-gap: 14px;
     }
 
 
