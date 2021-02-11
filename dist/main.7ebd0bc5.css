@@ -342,6 +342,9 @@ nav.side-nav img {
 }
 
 nav.side-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: #f5f5f5
 }
@@ -446,13 +449,10 @@ section.work article {
 }
 
 .prod {
-    flex-basis: 100%;
-    flex-grow: 0;
-    flex-shrink: 0;
     color: #f5f5f5;
     background-color: #f5f5f5;
     border-radius: 5px;
-    position: relative;
+    width: 100%;
 }
 
 .prod div {
@@ -468,7 +468,9 @@ section.work article {
 
 .prod img {
     width: 100%;
-    max-width: 100%;
+    object-fit: contain;
+    border-top-right-radius: 4px ;
+    border-top-left-radius: 4px ;
 }
 
 /* skills section */
@@ -715,7 +717,7 @@ section.studies ul.list img {
 
     /* contact section */
     section.contact-me {
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-columns: 1fr;
     }
 
     /* skills section */
@@ -759,12 +761,6 @@ section.studies ul.list img {
         flex-direction: column;
         column-gap: 14px;
         row-gap: 14px;
-    }
-
-    .projects div {
-        flex-grow: 0;
-        flex-shrink: 0;
-        flex-basis: 49%;
     }
 
 

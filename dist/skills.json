@@ -4,7 +4,7 @@
             "_id": 4,
             "name": "ECMAScript",
             "level": "intermediate",
-            "desc": "A scripting languaged orginaly designed to manipulate the DOM but is now widely used in other runtime enviroments.",
+            "desc": "A programming languaged orginaly designed to manipulate the DOM but is now widely used in other runtime environments.",
             "addonType": "Libraries & Frameworks",
             "addons": [
                 {
